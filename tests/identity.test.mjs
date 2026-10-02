@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import { authenticatedSaveKey } from '../lib/game-identity.ts';
+const key = headers => authenticatedSaveKey(new Request('https://example.test/api/game', { headers }));
+assert.equal(await key({}), null);
+const player = await key({ 'x-gear-works-player': 'account-123' });
+assert.match(player, /^account:[a-f0-9]{64}$/);
+assert.equal(player, await key({ 'x-gear-works-player': ' account-123 ' }));
+assert.notEqual(player, await key({ 'x-gear-works-player': 'account-456' }));
+assert.equal(await key({ 'email': 'player@example.com', 'x-user-id': 'player' }), null);
+console.log('Identity checks passed: opaque account subjects produce stable, isolated save keys.');

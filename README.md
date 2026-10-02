@@ -4,10 +4,7 @@ A persistent machine-shop business game. Start with **$25,000 and an empty shop*
 build a company around gear cutting, finishing, engineering, reverse engineering,
 and gearbox assembly.
 
-[Play the hosted game](https://night-shift-foundry.vincekf.chatgpt.site) ·
 [Improvement issues](https://github.com/Sovinnai/gear-works/issues)
-
-The hosted game currently requires the owner's authorized ChatGPT account.
 
 ## What you can do
 
@@ -59,6 +56,6 @@ criteria live in GitHub issues.
 Earlier game versions remain at `/design`, `/idle`, and `/classic`, each with a
 separate save namespace. The main game is the continuing machine-shop company.
 
-This repository begins from the published game source at Sites commit
-`844f2e0423e67dc680ae1333248e78d1a407a00d`. GitHub source changes do not deploy the
-hosted game automatically.
+The public repository contains the game and portable development setup. Deployment
+configuration is maintained separately, and GitHub changes do not publish a hosted
+instance automatically.
